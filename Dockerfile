@@ -33,4 +33,4 @@ RUN make CROSS_COMPILE=arm-linux-gnueabihf- dtbs
 
 RUN make CROSS_COMPILE=arm-linux-gnueabihf-
 
-CMD ["/bin/bash"] 
+CMD ["/bin/bash"]
