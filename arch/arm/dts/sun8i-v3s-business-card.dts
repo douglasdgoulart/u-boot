@@ -115,3 +115,15 @@
 &usbphy {
 	status = "okay";
 };
+
+&spi0 {
+	status = "okay";
+
+	spi-nand@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "spi-nand";
+		reg = <0>;
+		spi-max-frequency = <50000000>;
+	};
+};
