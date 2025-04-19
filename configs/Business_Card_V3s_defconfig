@@ -5,6 +5,7 @@ CONFIG_SPL=y
 CONFIG_MACH_SUN8I_V3S=y
 CONFIG_DRAM_CLK=360
 # CONFIG_HAS_ARMV7_SECURE_BASE is not set
+CONFIG_BOOTCOMMAND="setenv bootargs console=ttyS0,115200 ubi.mtd=1 ubi.block=0,root ubi.block=0,flashdrive root=/dev/ubiblock0_2 g_acm_ms.removable=1; sf probe 0 20000000; ubi part rootubi; ubi read ${kernel_addr_r} kernel; ubi read ${fdt_addr_r} dtb; bootz ${kernel_addr_r} - ${fdt_addr_r}"
 CONFIG_NO_NET=y
 CONFIG_SPI=y
 CONFIG_DM_SPI=y
@@ -15,9 +16,11 @@ CONFIG_SUNXI_SPI=y
 CONFIG_MTD=y
 CONFIG_DM_MTD=y
 CONFIG_SPL_MTD=y
+CONFIG_SPI_SUNXI=y
 CONFIG_SPL_SPI_SUNXI=y
 CONFIG_MTD_SPI_NAND=y
 CONFIG_CMD_SF=y
+CONFIG_CMD_LOG=y
 CONFIG_CMD_MTD=y
 CONFIG_CMD_NAND=y
 CONFIG_CMD_UBI=y
@@ -27,3 +30,5 @@ CONFIG_MTD_UBI_FASTMAP=y
 CONFIG_UBIFS_FS=y
 CONFIG_UBIFS_SILENCE_MSG=y
 CONFIG_SPI_FLASH_MACRONIX=y
+CONFIG_SF_DEFAULT_MODE=0x0
+CONFIG_SF_DEFAULT_SPEED=20000000

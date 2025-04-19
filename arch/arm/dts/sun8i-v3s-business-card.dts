@@ -118,6 +118,8 @@
 
 &spi0 {
 	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&spi0_pins>;
 
 	spi-nand@0 {
 		#address-cells = <1>;
